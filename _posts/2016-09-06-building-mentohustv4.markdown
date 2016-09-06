@@ -59,7 +59,7 @@ export STAGING_DIR=/home/toolchain-mipsel/
 ```
 注意，make过程中会报错，无需担心，此时我们需要的libpcap.a已经生产
 
-```
+``` Shell
 ls | grep libpcap.a
 cp libpcap.a /home/libpcap.a   //复制出来
 ```
@@ -76,13 +76,14 @@ make
 # 上传至路由器
 
 - 使用winscp用scp协议链接路由器并上传。或者直接使用scp命令
+
 ```
 scp mentohust root@192.168.1.1:/tmp/mentohust
 ```
 
 - ssh至路由器，执行以下命令
 
-```
+``` Shell
 chmod +x mentohust
 ./mentohust -h //查看帮助
 ./mentohust -u 用户名 -p 密码 -n eth0.2 -d 1 //测试运行
